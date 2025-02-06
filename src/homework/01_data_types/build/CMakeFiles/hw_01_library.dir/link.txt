@@ -1,0 +1,2 @@
+/Library/Developer/CommandLineTools/usr/bin/ar qc libhw_01_library.a CMakeFiles/hw_01_library.dir/data_types.cpp.o
+/Library/Developer/CommandLineTools/usr/bin/ranlib libhw_01_library.a

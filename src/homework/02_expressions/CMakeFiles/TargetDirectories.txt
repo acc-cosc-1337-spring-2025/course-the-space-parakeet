@@ -1,0 +1,4 @@
+/Users/spaceParakeet/ACC/2025.1_Spring/COSC_1337/course-the-space-parakeet/src/homework/02_expressions/CMakeFiles/hw_02_library.dir
+/Users/spaceParakeet/ACC/2025.1_Spring/COSC_1337/course-the-space-parakeet/src/homework/02_expressions/CMakeFiles/hw_02_exe.dir
+/Users/spaceParakeet/ACC/2025.1_Spring/COSC_1337/course-the-space-parakeet/src/homework/02_expressions/CMakeFiles/edit_cache.dir
+/Users/spaceParakeet/ACC/2025.1_Spring/COSC_1337/course-the-space-parakeet/src/homework/02_expressions/CMakeFiles/rebuild_cache.dir

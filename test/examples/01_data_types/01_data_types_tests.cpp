@@ -7,6 +7,18 @@ TEST_CASE("Verify Test Configuration", "verification") {
 
 /*test case echo_variable */
 
+TEST_CASE("Test echo variable") {
+	REQUIRE(echo_variable(5) == 5);
+	REQUIRE(echo_variable(10) == 10);
+	REQUIRE(echo_variable(100) == 100);
+}
+
+TEST_CASE("Test echo variable") {
+	REQUIRE(subtract_variables(5) == 5);
+	REQUIRE(subtract_variables(10) == 10);
+	REQUIRE(subtract_variables(100) == 100);
+}
+
 /*test case add_to_double_1 with 0 as parameter*/
 
 /*test case add_to_double_1 with 1 as parameter*/

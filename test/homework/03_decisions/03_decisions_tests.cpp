@@ -6,15 +6,20 @@ TEST_CASE("Verify Test Configuration", "verification") {
 }
 
 TEST_CASE("Test AND truth table") {
-	REQUIRE(true && true == true);
-	REQUIRE(true && false == false);
-	REQUIRE(false && true == false);
-	REQUIRE(false && false == false);
+	REQUIRE((true && true) == true);
+	REQUIRE((true && false) == false);
+	REQUIRE((false && true) == false);
+	REQUIRE((false && false) == false);
 }
 
 TEST_CASE("Test OR truth table") {
-	REQUIRE(true || true == true);
-	REQUIRE(true || false == true);
-	REQUIRE(false || true == true);
-	REQUIRE(false || false == false);
+	REQUIRE((true || true) == true);
+	REQUIRE((true || false) == true);
+	REQUIRE((false || true) == true);
+	REQUIRE((false || false) == false);
+}
+
+TEST_CASE("Test NOT truth table") {
+	REQUIRE((! true) == false);
+	REQUIRE((! false) == true);
 }

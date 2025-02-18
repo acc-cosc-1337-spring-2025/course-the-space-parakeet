@@ -7,3 +7,7 @@
 //hours over 40, false otherwise
 
 
+bool number_is_in_range(int min, int max, int num) {
+    return (min <= num) && (num <= max);
+}
+

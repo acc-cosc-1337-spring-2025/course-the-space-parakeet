@@ -1,11 +1,22 @@
 #include<iostream>
-#include "if.h"//to use is_even function here
+#include "if.h" //to use is_even function here
 
 using std::cout;
 using std::cin;
 
-int main() 
-{
+int main() {
+	int min, max, num;
+
+	cout << "Enter min number: ";
+	cin >> min;
+	cout << "Enter max number: ";
+	cin >> max;
+	cout << "Enter number: ";
+	cin >> num;
+
+	auto in_range = number_is_in_range(min, max, num);
+	cout << "Number is in range: " << in_range << "\n";
+
 	//create a bool variable named even
 	//create an int variable named value
 

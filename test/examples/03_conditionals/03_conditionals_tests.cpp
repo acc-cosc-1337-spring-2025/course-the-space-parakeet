@@ -1,5 +1,6 @@
 #define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
 #include "catch.hpp"
+#include "if.h"
 
 TEST_CASE("Verify Test Configuration", "verification") {
 	REQUIRE(true == true);
@@ -28,4 +29,9 @@ TEST_CASE("Test number is in range") {
 	REQUIRE(number_is_in_range(1, 10, 0) == false);
 	REQUIRE(number_is_in_range(1, 10, 5) == true);
 	REQUIRE(number_is_in_range(1, 10, 11) == false);
+}
+
+TEST_CASE("Test is vowel") {
+	REQUIRE(letter_is_vowel('a' == true));
+	REQUIRE(letter_is_vowel('x' == false));
 }

@@ -1,0 +1,2 @@
+/Library/Developer/CommandLineTools/usr/bin/ar qc libhw_04_library.a CMakeFiles/hw_04_library.dir/repetition.cpp.o
+/Library/Developer/CommandLineTools/usr/bin/ranlib libhw_04_library.a

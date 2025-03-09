@@ -1,0 +1,1 @@
+/Library/Developer/CommandLineTools/usr/bin/c++  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/hw_05_exe.dir/main.cpp.o CMakeFiles/hw_05_exe.dir/func.cpp.o -o hw_05_exe

@@ -1,0 +1,2 @@
+/Library/Developer/CommandLineTools/usr/bin/ar qc libhw_05_library.a CMakeFiles/hw_05_library.dir/func.cpp.o
+/Library/Developer/CommandLineTools/usr/bin/ranlib libhw_05_library.a

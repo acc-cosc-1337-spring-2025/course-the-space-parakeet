@@ -1,0 +1,2 @@
+/Library/Developer/CommandLineTools/usr/bin/ar qc libhw_tic_tac_toe_library.a CMakeFiles/hw_tic_tac_toe_library.dir/tic_tac_toe.cpp.o CMakeFiles/hw_tic_tac_toe_library.dir/tic_tac_toe_3.cpp.o CMakeFiles/hw_tic_tac_toe_library.dir/tic_tac_toe_4.cpp.o CMakeFiles/hw_tic_tac_toe_library.dir/tic_tac_toe_manager.cpp.o CMakeFiles/hw_tic_tac_toe_library.dir/tic_tac_toe_data.cpp.o
+/Library/Developer/CommandLineTools/usr/bin/ranlib libhw_tic_tac_toe_library.a

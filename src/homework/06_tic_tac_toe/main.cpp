@@ -1,4 +1,5 @@
 #include "tic_tac_toe.h"
+#include "tic_tac_toe_manager.h"
 #include <iostream>
 #include <string>
 #include <limits>
@@ -53,28 +54,38 @@ char input_selection(char opt1, char opt2, string msg, string err_msg) {
 ------------------------------------------------------------------------------*/
 
 int main() {
-	TicTacToe tic_tac_toe;
+	TicTacToe game;
+	TicTacToeManager game_manager;
 	char selection;
 	int position;
 	do {
+		cout << "------------------------------\n";
+		cout << "TIC TAC TOE\n";
+		cout << "..............................\n";
+		cout << "Win Stats" 
+		<< " | X: " << game_manager.get_x_wins()
+		<< " | O: " << game_manager.get_o_wins() 
+		<< " | C: " << game_manager.get_c_wins() << '\n';
+		cout << "------------------------------\n";
 		selection = input_selection (
 			'X', 'O', 
 			"Enter first player (X/O): ", 
 			"Invalid player. Please select X or O."
 		);
-		tic_tac_toe.start_game(selection);
+		game.start_game(selection);
 		do {
-			cout << "Player " << tic_tac_toe.get_player() << "'s turn!\n";
-			tic_tac_toe.display_board();
+			cout << "Player " << game.get_player() << "'s turn!\n";
+			game.display_board();
 			position = input_int_range (
 				1, 9,
 				"Enter move (squares 1-9): ",
 				"Invalid move. Please enter number 1-9."
 			);
-			tic_tac_toe.mark_board(position);
-		} while (!tic_tac_toe.game_over());
-		tic_tac_toe.display_board();
-		cout << "Game over. " << tic_tac_toe.get_winner() << " wins!\n";
+			game.mark_board(position);
+		} while (!game.game_over());
+		game.display_board();
+		cout << "Game over. " << game.get_winner() << " wins!\n";
+		game_manager.save_game(game);
 		selection = input_selection (
 			'Y', 'N', 
 			"Play again? (Y/N): ", 
@@ -82,5 +93,11 @@ int main() {
 		);
 	} while (selection == 'Y');
 	cout << "Thanks for playing!\n";
+	cout << "------------------------------\n";
+	cout << "Win Stats" 
+	<< " | X: " << game_manager.get_x_wins()
+	<< " | O: " << game_manager.get_o_wins() 
+	<< " | C: " << game_manager.get_c_wins() << '\n';
+	cout << "------------------------------\n";
 	return 0;
 }

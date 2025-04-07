@@ -33,12 +33,28 @@ void TicTacToe::display_board() const {
     }
 }
 
-bool TicTacToe::game_over() const {
-    return check_board_full();
-}
-
 char TicTacToe::get_player() const {
     return player;
+}
+
+char TicTacToe::get_winner() const {
+    return winner;
+}
+
+bool TicTacToe::game_over() {
+    if (check_row_win()
+    || check_column_win()
+    || check_diagonal_win()) {
+        set_winner();
+        return true;
+    }
+    else if (check_board_full()) {
+        winner = 'C';
+        return true;
+    }
+    else {
+        return false;
+    }
 }
 
 /*------------------------------------------------------------------------------
@@ -50,13 +66,44 @@ void TicTacToe::set_next_player() {
     else                player = 'X';
 }
 
+void TicTacToe::set_winner() {
+    if (player == 'X')  winner = 'O';
+    else                winner = 'X';
+}
+
 void TicTacToe::clear_board() {
     board.fill(' ');
 }
 
+/*-------
+[0][1][2]
+[3][4][5]
+[6][7][8]
+-------*/
+
+// Column win: matching slots (not empty space ' ') 0,3,6 or 1,4,7 or 2,5,8
+bool TicTacToe::check_column_win() const {
+    return (board[0] != ' ') && (board[0] == board[3] && board[3] == board[6])
+        || (board[1] != ' ') && (board[1] == board[4] && board[4] == board[7])
+        || (board[2] != ' ') && (board[2] == board[5] && board[5] == board[8]);
+}
+
+// Row win: matching slots (not empty space ' ') 0,1,2 or 3,4,5 or 6,7,8
+bool TicTacToe::check_row_win() const {
+    return (board[0] != ' ') && (board[0] == board[1] && board[1] == board[2])
+        || (board[3] != ' ') && (board[3] == board[4] && board[4] == board[5])
+        || (board[6] != ' ') && (board[6] == board[7] && board[7] == board[8]);
+}
+
+// Diagonal win: matching slots (not empty space ' ') 0,4,8 or 6,4,2
+bool TicTacToe::check_diagonal_win() const {
+    return (board[0] != ' ') && (board[0] == board[4] && board[4] == board[8])
+        || (board[6] != ' ') && (board[6] == board[4] && board[4] == board[2]);
+}
+
 bool TicTacToe::check_board_full() const {
-    for (auto space : board)
-        if (space == ' ') 
+    for (auto square : board)
+        if (square == ' ') 
             return false;
     return true;
 }

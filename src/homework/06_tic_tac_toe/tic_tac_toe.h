@@ -13,15 +13,21 @@ class TicTacToe {
         static const int BOARD_SIZE = 3;
         array<char, BOARD_SIZE * BOARD_SIZE> board;
         char player;
+        char winner;
     public:
         void start_game(char first_player);
         void mark_board(int position);
         void display_board() const;
-        bool game_over() const;
         char get_player() const;
+        char get_winner() const;
+        bool game_over();
     private:
         void set_next_player();
+        void set_winner();
         void clear_board();
+        bool check_column_win() const;
+        bool check_row_win() const;
+        bool check_diagonal_win() const;
         bool check_board_full() const;
         int  index_2D(int row, int col) const;
 };

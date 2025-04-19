@@ -1,12 +1,27 @@
 #include "tic_tac_toe_manager.h"
+#include <iostream>
+#include <utility>
+
+using std::cout;
+using std::move;
 
 /*------------------------------------------------------------------------------
     Public Member Functions
 ------------------------------------------------------------------------------*/
 
-void TicTacToeManager::save_game(TicTacToe game) {
-    games.push_back(game);
-    update_winner_count(game.get_winner());
+void TicTacToeManager::save_game(unique_ptr<TicTacToe>& game) {
+    update_winner_count(game->get_winner());
+    games.push_back(move(game));
+}
+
+void TicTacToeManager::display_games_played() const {
+	cout << "------------------------------\n";
+	cout << "Game History:\n";
+	cout << "------------------------------\n";
+    for (auto& game : games) {
+        game->display_board();
+        cout << "Winner: " << game->get_winner() << '\n';
+    }
 }
 
 void TicTacToeManager::get_win_totals(int& x, int& o, int& c) {

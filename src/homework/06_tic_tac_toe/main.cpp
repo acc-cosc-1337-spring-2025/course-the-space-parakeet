@@ -73,7 +73,7 @@ int main() {
 		cout << "..............................\n";
 		cout << "Win Stats" 
 		<< " | X: " << game_manager.get_x_wins()
-		<< " | O: " << game_manager.get_o_wins() 
+		<< " | O: " << game_manager.get_o_wins()
 		<< " | C: " << game_manager.get_c_wins() << '\n';
 		cout << "------------------------------\n";
 		selection = input_selection (
